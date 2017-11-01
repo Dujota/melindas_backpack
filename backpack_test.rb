@@ -51,7 +51,7 @@ class BackpackTest < MiniTest::Test
     end
   end
 
-  def test_gym_shoes_not_packed
+  def test_any_other_day_dont_pack_gym_shoes
     ['friday', 'wednesday'].each do |day|
       backpack = build(:backpack, day_of_week: day)
       refute(backpack.items.include?('gym shoes'))
