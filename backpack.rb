@@ -10,11 +10,10 @@ class Backpack
   end
 
   def prepare
-    # set up local variables used by rest of prepare method
     weather_today = @attributes[:weather]
     day_of_week = @attributes[:day_of_week]
 
-    # Ensure appropriate clothing is added to backpack
+    # Ensure appropriate clothing is added to items
     if weather_today == 'rainy'
       @items << 'pants'
       @items << 'shirt'
@@ -29,7 +28,6 @@ class Backpack
     end
 
     # Ensure gym shoes are added to backpack if it's a gym day
-    # Gotta get to the gym on Tuesdays and Thursdays. Wait a sec...
     if day_of_week == 'monday' || day_of_week == 'thursday'
       # add gym shoes to items
       @items << 'gym shoes'
@@ -45,16 +43,16 @@ class Backpack
   end
 
   # Prints a summary packing list for Melinda's backpack
-  def my_func
-    output = []
-    output << "Melinda, here's your packing list!"
-    output << "Day: #{@attributes[:day_of_week]}, Weather: #{@attributes[:weather]}"
-    output << ""
+  def print_summary
+    summary = []
+    summary << "Melinda, here's your packing list!"
+    summary << "Day: #{@attributes[:day_of_week]}, Weather: #{@attributes[:weather]}"
+    summary << ""
 
     @items.each do |item|
-      output << "- #{item}"
+      summary << "- #{item}"
     end
-    output.join("\n")
+    summary.join("\n")
   end
 
 end

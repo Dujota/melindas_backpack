@@ -56,7 +56,7 @@ class BackpackTest < MiniTest::Test
       - shirt
       - gym shoes
       - packed lunch"
-    assert_equal(expected, backpack.my_func)
+    assert_equal(expected, backpack.print_summary)
   end
 
 end
